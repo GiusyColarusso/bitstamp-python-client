@@ -332,7 +332,7 @@ class Trading(Public):
         Order to buy amount of bitcoins for market price.
         """
         data = {'amount': amount}
-        url = self._construct_url("buy/market/", base, quote)
+        url = self._construct_url("v2/buy/market/", base, quote)
         return self._post(url, data=data, return_json=True, version=2)
 
     def sell_limit_order(self, amount, price, base="btc", quote="usd", limit_price=None):
